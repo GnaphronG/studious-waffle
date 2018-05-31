@@ -1,0 +1,12 @@
+{
+  "server": {
+    "protocol": "http",
+    "port": 8080,
+    "stopSignals": ["SIGINT", "SIGTERM"]
+  },
+  "log": {
+    "level": "info"
+  },
+  "services": {
+  }
+}

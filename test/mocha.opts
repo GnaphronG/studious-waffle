@@ -1,0 +1,8 @@
+--require chai/register-assert
+--require chai/register-expect
+--require chai/register-should
+--require ./test/helper/sinon-chai
+--recursive
+--reporter spec
+--reporter mocha-junit-reporter
+--reporter-options mochaFile=./coverage/junit.xml

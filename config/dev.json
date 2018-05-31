@@ -1,0 +1,8 @@
+{
+  "server": {
+    "protocol": "http2",
+    "certFile": "certs/localhost-cert.pem",
+    "keyFile": "certs/localhost-privkey.pem",
+    "cluster": 2
+  }
+}

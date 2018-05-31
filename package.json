@@ -1,0 +1,42 @@
+{
+  "name": "smallGroup",
+  "version": "1.0.0",
+  "description": "Koa2 based service squeleton with logging and monitoring already wired in.",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test nyc mocha -R spec",
+    "start": "node ./src/server | bunyan -o short",
+    "precommit": "lint-staged",
+    "pretest": "nsp check"
+  },
+  "keywords": [
+    "koa2",
+    "node.js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bunyan": "1.8.12",
+    "config": "1.29.1",
+    "koa": "2.4.1",
+    "koa-bunyan-logger": "2.0.0",
+    "koa-router": "7.3.0",
+    "socket.io": "2.1.1"
+  },
+  "devDependencies": {
+    "chai": "4.1.2",
+    "eslint": "4.15.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-prettier": "2.4.0",
+    "husky": "0.14.3",
+    "lint-staged": "^6.0.0",
+    "mocha": "4.1.0",
+    "mocha-junit-reporter": "1.15.0",
+    "nyc": "11.4.1",
+    "nsp": "3.1.0",
+    "prettier": "1.10.2",
+    "sinon": "4.1.4",
+    "sinon-chai": "2.14.0",
+    "supertest": "3.0.0"
+  }
+}

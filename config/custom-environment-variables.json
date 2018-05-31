@@ -1,0 +1,12 @@
+{
+  "server": {
+    "port": "SMALLGROUP_SERVER_PORT",
+    "cluster": "SMALLGROUP_SERVER_CLUSTER",
+    "protocol": "SMALLGROUP_SERVER_PROTOCOL",
+    "certFile": "SMALLGROUP_SERVER_CERTFILE",
+    "keyFile": "SMALLGROUP_SERVER_KEYFILE"
+  },
+  "log": {
+    "level": "SMALLGROUP_LOG_LEVEL"
+  }
+}

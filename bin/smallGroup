@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+const { name } = require('../src/lib/package');
+
+process.title = name || /* istanbul ignore next */ process.pid;
+require('../src/server.js');

@@ -1,0 +1,37 @@
+#!/bin/sh
+':' //; if test -e /tmp/hc_env; then . /tmp/hc_env; fi
+':' //; cd `dirname $(stat -f $0 )`/..; exec "$(command -v nodejs || command -v node)" "$0" "$@"
+
+//Phase 1:  Cache the config
+if (process.env.NODE_EXTRA_CA_CERTS == undefined) {
+  const {server} = require('config');
+  const fs = require('fs')
+  let data = `export NODE_EXTRA_CA_CERTS=${server.certFile}\n` +
+             `export PORT=${server.port}\n` +
+             `export PROTOCOL=${server.protocol.replace('http2', 'https')}`
+
+  fs.writeFileSync('/tmp/hc_env', data);
+  process.exit(0);
+}
+
+// Phase 3: Use the cache
+const http = require(process.env.PROTOCOL);
+
+const options = {
+  host: 'localhost',
+  port: process.env.PORT || 3000,
+  path: '/ping',
+  timeout: 100
+}
+
+const request = http.request(options, res => {
+    console.log('ping');
+    process.exit(res.statusCode === 200 ? 0 : 1)
+});
+
+request.on('error', err => {
+    console.error(err);
+    process.exit(1)
+});
+
+request.end();

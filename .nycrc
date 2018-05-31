@@ -1,0 +1,32 @@
+{
+    "check-coverage": true,
+    "per-file": false,
+    "lines": 99,
+    "statements": 99,
+    "functions": 99,
+    "branches": 99,
+    "watermarks": {
+        "lines": [80, 95],
+        "functions": [80, 95],
+        "branches": [80, 95],
+        "statements": [80, 95]
+    },
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/**/*.spec.js"
+    ],
+    "reporter": [
+      "lcov",
+      "json",
+	  "text",
+      "text-summary"
+    ],
+    "require": [
+    ],
+    "extension": [
+    ],
+    "cache": false,
+    "all": true
+}
